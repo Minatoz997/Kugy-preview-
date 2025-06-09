@@ -71,10 +71,47 @@ export const createBlossoms = (container: HTMLElement | null) => {
 
 export const createLightRays = (container: HTMLElement | null) => {
   if (!container) return;
-  // Light rays implementation
+
+  const rayCount = 8;
+  for (let i = 0; i < rayCount; i++) {
+    const ray = document.createElement('div');
+    ray.classList.add('light-ray');
+    
+    const angle = (i / rayCount) * 360;
+    ray.style.transform = `rotate(${angle}deg)`;
+    
+    container.appendChild(ray);
+
+    gsap.to(ray, {
+      opacity: 0.3,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+      delay: i * 0.25
+    });
+  }
 };
 
 export const createSacredGeometry = (container: HTMLElement | null) => {
   if (!container) return;
-  // Sacred geometry implementation
+
+  const geometryCount = 3;
+  for (let i = 0; i < geometryCount; i++) {
+    const geometry = document.createElement('div');
+    geometry.classList.add('sacred-geometry-element');
+    
+    const size = 200 + i * 100;
+    geometry.style.width = `${size}px`;
+    geometry.style.height = `${size}px`;
+    
+    container.appendChild(geometry);
+
+    gsap.to(geometry, {
+      rotation: 360,
+      duration: 20 + i * 10,
+      repeat: -1,
+      ease: "none"
+    });
+  }
 };
