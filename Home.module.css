@@ -1,0 +1,45 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 40%, #172554 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.particleContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(64, 231, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.blossom {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.main {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+
+.title {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
